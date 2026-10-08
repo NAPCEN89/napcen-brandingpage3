@@ -146,13 +146,12 @@ export default function NapcenLandingPage() {
             <Image src="/Napcen-logo.webp" alt="NAPCEN Logo" width={140} height={50} className="object-contain" />
           </a>
 
-          <nav className="hidden md:flex gap-8 text-sm font-bold text-slate-700">
+          <nav className="hidden md:flex items-center gap-8 text-[15px] font-bold text-[#0f1b3a]">
+            <a href="#products" className="hover:text-primary-blue transition-colors">Systems</a>
             <a href="#applications" className="hover:text-primary-blue transition-colors">Applications</a>
-            <a href="#products" className="hover:text-primary-blue transition-colors">Products</a>
             <a href="#engineering" className="hover:text-primary-blue transition-colors">Engineering</a>
-            <a href="#industries" className="hover:text-primary-blue transition-colors">Industries</a>
-            <a href="#faq" className="hover:text-primary-blue transition-colors">FAQ</a>
-            <a href="#contact" className="hover:text-primary-blue transition-colors">Enquire</a>
+            <a href="#faq" className="hover:text-primary-blue transition-colors">FAQs</a>
+            <a href="#contact" className="bg-[#154db0] hover:bg-[#103a87] text-white px-6 py-2.5 rounded shadow-sm transition-colors">Request a quote</a>
           </nav>
         </div>
       </header>
@@ -464,7 +463,7 @@ export default function NapcenLandingPage() {
         </section>
 
         {/* SYSTEM CONFIGURATIONS SECTION */}
-        <section id="configurations" className="py-10 lg:py-32 bg-white relative overflow-hidden border-t border-slate-200/60">
+        <section id="configurations" className="py-10 lg:py-32 bg-white relative overflow-hidden">
           {/* Precise Technical Grid Pattern */}
           <div
             className="absolute inset-0 z-0 opacity-[0.025] pointer-events-none"
@@ -700,159 +699,137 @@ export default function NapcenLandingPage() {
           </div>
         </section>
 
-        {/* COMPARISON SECTION */}
-        <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
-          <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[1600px] mx-auto">
-            {/* Top Header */}
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-8">
-              <div className="lg:w-[55%]">
-                <div className="mb-6">
-                  <span className="text-slate-500 font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase">
-                    DRY VS WET DOWNDRAFT TABLE
-                  </span>
+        {/* APPLICATIONS SECTION */}
+        <section id="applications" className="py-24 bg-white relative overflow-hidden">
+          <div className="w-full px-4 md:px-8 xl:px-12 2xl:px-16 max-w-[1600px] mx-auto">
+            {/* Header Area */}
+            <div className="mb-8 relative">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-4xl">
+                <div className="mb-4">
+                  <span className="text-slate-500 font-bold text-[11px] tracking-[0.2em] uppercase block">Equipment</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl lg:text-[46px] font-black text-[#0f1b3a] leading-[1.1] tracking-tight">
-                  Choose by material. <br />
-                  <span className="text-primary-blue">Then refine the configuration.</span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f1b3a] leading-[1.05] tracking-tight mb-6">
+                  Industrial Downdraft Table<br className="hidden md:block" />
+                  <span className="text-primary-blue">Manufacturer</span>
                 </h2>
-              </div>
-              <div className="lg:w-[40%]">
-                <p className="text-slate-500 text-[15px] leading-relaxed font-medium">
-                  There is no universal table for every dust. Use this comparison as a starting point for an engineering conversation.
+                <p className="text-slate-500 text-lg mb-2 max-w-lg leading-relaxed font-medium">
+                  NAPCEN downdraft tables capture dust and fumes from grinding, welding, polishing and woodworking. Explore portable and custom extraction benches with dry or wet collection options. Request a quote for your industrial application.
                 </p>
-              </div>
+              </motion.div>
             </div>
 
-            <p className="text-[13px] text-slate-500 mb-6 font-medium">Dry and wet downdraft collection: selection considerations</p>
+            {/* Application Cards Grid */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-5">
+              {[
+                {
+                  category: "METALWORKING",
+                  title: "Grinding Downdraft Table",
+                  desc: "NAPCEN Grinding Downdraft Tables provide dust extraction at the work surface for metal grinding, deburring and abrasive finishing.",
+                  extraLabel: "Applications",
+                  extraText: "Metal grinding, edge finishing, deburring and surface preparation.",
+                  btnText: "Explore grinding tables",
+                  linkUrl: "#contact",
+                  icon: Settings2,
+                  image: "/Portable_Downdraft_Table.png"
+                },
+                {
+                  category: "FINISHING",
+                  title: "Polishing Downdraft Table",
+                  desc: "Capture airborne particles generated during buffing, polishing and surface finishing. An integrated extraction work surface draws fine metal dust and abrasive residue.",
+                  extraLabel: "Applications",
+                  extraText: "Metal polishing, buffing, abrasive finishing and component surface preparation.",
+                  btnText: "Explore polishing tables",
+                  linkUrl: "#contact",
+                  icon: Gem,
+                  image: "/Downdraft Dust Collector Table.png"
+                },
+                {
+                  category: "FABRICATION",
+                  title: "Welding Downdraft Table",
+                  desc: "Combine an industrial workbench with local extraction for welding smoke and fine particulate. Downward suction draws fumes toward the filtration system.",
+                  extraLabel: "Applications",
+                  extraText: "Bench welding, small-component fabrication and compatible welding preparation tasks.",
+                  btnText: "Explore welding tables",
+                  linkUrl: "#contact",
+                  icon: Wind,
+                  image: "/Grinding Downdraft Table.png"
+                },
+                {
+                  category: "GENERAL DUST",
+                  title: "Downdraft Dust Collector Table",
+                  desc: "Integrate a working surface and particulate collection system into one industrial workstation. Air passes through the perforated tabletop carrying compatible dust.",
+                  extraLabel: "Applications",
+                  extraText: "Grinding, sanding, deburring, polishing and general component finishing.",
+                  btnText: "Explore dust collectors",
+                  linkUrl: "#contact",
+                  icon: Cloud,
+                  image: "/Welding Downdraft Table.png"
+                },
+                {
+                  category: "FLEXIBLE",
+                  title: "Portable Downdraft Table",
+                  desc: "Bring dust and fume extraction to workshops with changing production layouts. A compact work surface and integrated filtration system support compatible tasks.",
+                  extraLabel: "Applications",
+                  extraText: "Maintenance work, small-batch finishing, workshop sanding and light fabrication.",
+                  btnText: "Explore portable tables",
+                  linkUrl: "#contact",
+                  icon: Truck,
+                  image: "/Wood Working Downdraft Table.png"
+                },
+                {
+                  category: "WOOD & JOINERY",
+                  title: "Woodworking Downdraft Table",
+                  desc: "Provide local dust extraction for manual sanding and compatible wood finishing operations. Downward airflow through the work surface draws fine wood dust.",
+                  extraLabel: "Applications",
+                  extraText: "Furniture sanding, joinery finishing, wooden component preparation and carving tasks.",
+                  btnText: "Explore woodworking tables",
+                  linkUrl: "#contact",
+                  icon: Layers,
+                  image: "/Polishing Downdraft Table.png"
+                }
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div key={i} variants={fadeInUp} className="relative p-6 lg:p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all group overflow-hidden min-h-[420px] flex flex-col">
+                    {/* Top row: Icon */}
+                    <div className="flex justify-between items-start mb-6 relative z-10">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-slate-50 text-slate-400 group-hover:bg-primary-blue group-hover:text-white transition-colors">
+                        <Icon size={24} />
+                      </div>
+                    </div>
 
-            {/* Comparison Table */}
-            <div className="w-full overflow-x-auto rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 mb-10">
-              <table className="w-full text-left border-collapse min-w-[800px]">
-                <thead>
-                  <tr className="bg-[#0f1b3a] text-white">
-                    <th className="p-5 lg:p-6 text-[15px] font-bold w-[25%]">Decision factor</th>
-                    <th className="p-5 lg:p-6 text-[15px] font-bold w-[37.5%] border-l border-white/10">Dry collection bench</th>
-                    <th className="p-5 lg:p-6 text-[15px] font-bold w-[37.5%] border-l border-white/10">Wet collection bench</th>
-                  </tr>
-                </thead>
-                <tbody className="text-[14px]">
-                  <tr className="bg-white border-b border-slate-100">
-                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Collection mechanism</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Dust retained on suitable filter media</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Compatible particles collected through water contact</td>
-                  </tr>
-                  <tr className="bg-slate-50/50 border-b border-slate-100">
-                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Material suitability</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Review combustible dust, temperature and filter compatibility</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Review water reactivity, gas generation and mixed-metal hazards</td>
-                  </tr>
-                  <tr className="bg-white border-b border-slate-100">
-                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Routine maintenance</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Filter cleaning, replacement and dust removal</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Water-level checks, sludge removal and internal cleaning</td>
-                  </tr>
-                  <tr className="bg-slate-50/50 border-b border-slate-100">
-                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Utilities and waste</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Electrical supply; compressed air if the cleaning system needs it</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Electrical supply, make-up water and a defined sludge route</td>
-                  </tr>
-                  <tr className="bg-white border-b border-slate-100">
-                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Hot-work duty</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Evaluate sparks and ignition controls as part of the design</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Do not assume water collection makes every hot-work process suitable</td>
-                  </tr>
-                  <tr className="bg-slate-50/50">
-                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Final selection</td>
-                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100" colSpan={2}>Confirm the material, process risks and discharge requirements before choosing equipment.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+                    {/* Content */}
+                    <div className="relative z-20 flex-1 flex flex-col">
+                      <div className="text-[10px] font-bold text-primary-blue tracking-widest uppercase mb-2">
+                        {item.category}
+                      </div>
+                      <h3 className="text-2xl font-black mb-3 text-slate-800">{item.title}</h3>
+                      <p className="text-slate-600 text-sm font-medium leading-relaxed mb-4 pr-12 sm:pr-16 lg:pr-24">{item.desc}</p>
 
-        {/* TECHNICAL SPECIFICATION SECTION */}
-        <section className="pt-12 pb-10 lg:pt-16 lg:pb-12 bg-white relative overflow-hidden">
+                      <div className="mb-8 pr-[140px] sm:pr-[150px] lg:pr-[170px]">
+                        <span className="font-bold text-xs text-slate-700 uppercase">{item.extraLabel}:</span>
+                        <span className="text-sm text-slate-500 ml-2">{item.extraText}</span>
+                      </div>
 
-          {/* Background Watermark */}
-          <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center opacity-10">
-            <div className="relative w-[650px] h-[650px] translate-x-4 translate-y-4">
-              <Image
-                src="/Glossy Blue Clipboard Gear Icon.png"
-                alt="Background Decoration"
-                fill
-                className="object-contain object-center"
-              />
-            </div>
-          </div>
+                      <div className="mt-auto flex justify-start relative z-30">
+                        <a 
+                          href={item.linkUrl} 
+                          onClick={() => setFormData({ ...formData, preferredTable: item.title })}
+                          className="border border-slate-200 text-slate-700 hover:border-primary-blue hover:text-primary-blue bg-white/80 backdrop-blur-sm inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-all"
+                        >
+                          {item.btnText} <ArrowUpRight size={14} />
+                        </a>
+                      </div>
+                    </div>
 
-          <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[1600px] mx-auto relative z-10">
-            <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-
-              {/* Left Side */}
-              <div className="w-full lg:w-[45%]">
-                <div className="mb-6">
-                  <span className="text-slate-500 font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase">
-                    TECHNICAL SPECIFICATION
-                  </span>
-                </div>
-                <h2 className="text-4xl md:text-5xl lg:text-[46px] font-black text-[#0f1b3a] leading-[1.1] tracking-tight mb-6">
-                  A bench that fits the job.<br />
-                  <span className="text-primary-blue">A specification that fits the site.</span>
-                </h2>
-                <p className="text-slate-500 text-[15px] leading-relaxed font-medium mb-10 max-w-md">
-                  Airflow, table size and motor power should follow the application. Share the required work envelope and material details so the proposal can define the operating basis rather than rely on a generic catalogue rating.
-                </p>
-                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold text-[13px] transition-all shadow-sm group">
-                  Request a technical proposal
-                  <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </button>
-              </div>
-
-              {/* Right Side (Specs List) */}
-              <div className="w-full lg:w-[55%]">
-                <div className="flex flex-col">
-
-                  {/* Row */}
-                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5 border-b border-slate-200/80 first:pt-0">
-                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Work surface & capacity</h4>
-                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Part dimensions, supported load, grating or perforated top, working height and tool access</p>
-                  </div>
-
-                  {/* Row */}
-                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5 border-b border-slate-200/80">
-                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Extraction performance</h4>
-                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Active capture area, airflow distribution, resistance, fan duty and discharge arrangement</p>
-                  </div>
-
-                  {/* Row */}
-                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5 border-b border-slate-200/80">
-                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Collection technology</h4>
-                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Filter media or wet collection selected for the dust characteristics and process risks</p>
-                  </div>
-
-                  {/* Row */}
-                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5 border-b border-slate-200/80">
-                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Electrical & utilities</h4>
-                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Local voltage, frequency, controls, compressed-air needs and water requirements as applicable</p>
-                  </div>
-
-                  {/* Row */}
-                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5 border-b border-slate-200/80">
-                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Serviceability</h4>
-                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Access clearance, collection removal, filter or water servicing and monitoring provisions</p>
-                  </div>
-
-                  {/* Row */}
-                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5">
-                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Project documentation</h4>
-                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Agree drawings, design inputs, inspection scope and operating instructions in the quotation</p>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
+                    {/* Background Equipment Image - Absolute at bottom right */}
+                    <div className="absolute -bottom-2 -right-0 lg:-right-2 w-[180px] h-[180px] lg:w-[200px] lg:h-[200px] z-10 group-hover:scale-110 transition-transform duration-500 origin-bottom-right">
+                      <Image src={item.image} alt={item.title} fill className="object-contain drop-shadow-2xl" />
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
           </div>
         </section>
 
@@ -1167,8 +1144,226 @@ export default function NapcenLandingPage() {
             </div>
           </div>
         </section> */}
+        {/* WORKING PRINCIPLE SECTION */}
+        <section id="working-principle" className="py-10 lg:py-24 bg-white relative overflow-clip">
+          <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[1600px] mx-auto relative z-10">
+            {/* Header */}
+            <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-20">
+              <span className="text-slate-500 font-bold text-[11px] tracking-[0.2em] uppercase block mb-4">HOW IT WORKS</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f1b3a] leading-[1.05] tracking-tight mb-6">
+                Downdraft Table <span className="text-primary-blue">Working Principle</span>
+              </h2>
+              <p className="text-slate-500 text-lg leading-relaxed font-medium">
+                A downdraft table works by drawing dust-laden air downward through a perforated work surface into a collection system. An extraction fan creates suction across the active working area, helping capture particles generated during grinding, sanding, deburring, polishing and suitable bench welding operations.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
+              {/* Left Side: Image */}
+              <div className="relative lg:sticky lg:top-32">
+                <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square flex items-center justify-center group">
+                  <Image src="/Downdraft table working principle.png" alt="Downdraft table working principle" fill className="object-contain scale-110 lg:scale-125 " />
+                </div>
+
+                {/* Conclusion Block under Image */}
+                <div className="mt-8 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group hover:border-blue-200 transition-colors">
+                  <div className="absolute top-0 left-0 w-1.5 h-full bg-primary-blue"></div>
+                  <h4 className="text-[17px] font-black text-[#0f1b3a] mb-3 group-hover:text-primary-blue transition-colors">What Determines Downdraft Table Performance?</h4>
+                  <p className="text-[13px] sm:text-sm text-slate-500 font-medium leading-relaxed">
+                    Effective industrial dust extraction depends on airflow distribution, workpiece position, filter condition and containment around the operation. Selecting a NAPCEN downdraft table starts with the material, production task and component dimensions so the extraction arrangement suits the actual working conditions.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Side: Numbered Steps */}
+              <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
+                {[
+                  { title: "Dust and Fume Capture", text: "The workpiece sits above the extraction surface, placing collection close to the emission source. Downward airflow carries airborne particles into the bench. Depending on the configuration, rear and side extraction panels can extend capture around the working zone." },
+                  { title: "Airflow Through the Collection Chamber", text: "Contaminated air enters an internal chamber beneath the tabletop. The chamber directs airflow toward the filtration or separation system. Workpiece size, blocked openings and workshop cross-drafts affect how effectively the downdraft extraction table captures emissions." },
+                  { title: "Particle Separation", text: "In a dry downdraft table, cartridge or bag filters retain compatible dust and fine particulate while air passes through the filter media. A wet downdraft table uses water contact to separate suitable particles. The collection method must match the material and process." },
+                  { title: "Dust Collection and Filter Cleaning", text: "Captured material accumulates in a collection drawer, hopper or wet-system sludge compartment. Dry systems equipped with pulse cleaning use compressed-air bursts to release dust from filter surfaces. Routine removal of collected material and filter servicing help maintain extraction performance." },
+                  { title: "Filtered-Air Discharge", text: "The fan maintains airflow through the bench and directs treated air toward the specified outlet. Indoor return or outdoor discharge depends on the contaminants, filtration arrangement and site requirements. Particulate filters do not automatically remove gases or vapours." }
+                ].map((step, idx) => (
+                  <motion.div key={idx} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="bg-white rounded-3xl p-5 sm:p-6 lg:p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:border-blue-100 transition-all group">
+                    <div className="grid grid-cols-[auto_1fr] gap-x-4 sm:gap-x-5 lg:gap-x-6 gap-y-3 sm:gap-y-1.5 items-center sm:items-start">
+                      <div className="w-12 h-12 rounded-[14px] bg-slate-50 text-slate-300 font-black text-xl flex items-center justify-center shrink-0 group-hover:bg-primary-blue group-hover:text-white transition-colors shadow-sm border border-slate-100 group-hover:border-primary-blue sm:row-span-2 self-start">
+                        {idx + 1}
+                      </div>
+                      <h3 className="text-lg sm:text-[19px] font-black text-[#0f1b3a] group-hover:text-primary-blue transition-colors pt-1 sm:pt-0">
+                        {step.title}
+                      </h3>
+                      <p className="text-slate-500 text-[13px] sm:text-[14px] leading-relaxed font-medium w-full col-span-2 sm:col-span-1 sm:col-start-2">
+                        {step.text}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <WorkingPrincipleDark />
+
+        {/* WORKFLOW SECTION */}
+        {/* COMPARISON SECTION */}
+        <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
+          <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[1600px] mx-auto">
+            {/* Top Header */}
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-8">
+              <div className="lg:w-[55%]">
+                <div className="mb-6">
+                  <span className="text-slate-500 font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase">
+                    DRY VS WET DOWNDRAFT TABLE
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-5xl lg:text-[46px] font-black text-[#0f1b3a] leading-[1.1] tracking-tight">
+                  Choose by material. <br />
+                  <span className="text-primary-blue">Then refine the configuration.</span>
+                </h2>
+              </div>
+              <div className="lg:w-[40%]">
+                <p className="text-slate-500 text-[15px] leading-relaxed font-medium">
+                  There is no universal table for every dust. Use this comparison as a starting point for an engineering conversation.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-[13px] text-slate-500 mb-6 font-medium">Dry and wet downdraft collection: selection considerations</p>
+
+            {/* Comparison Table */}
+            <div className="w-full overflow-x-auto rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 mb-10">
+              <table className="w-full text-left border-collapse min-w-[800px]">
+                <thead>
+                  <tr className="bg-[#0f1b3a] text-white">
+                    <th className="p-5 lg:p-6 text-[15px] font-bold w-[25%]">Decision factor</th>
+                    <th className="p-5 lg:p-6 text-[15px] font-bold w-[37.5%] border-l border-white/10">Dry collection bench</th>
+                    <th className="p-5 lg:p-6 text-[15px] font-bold w-[37.5%] border-l border-white/10">Wet collection bench</th>
+                  </tr>
+                </thead>
+                <tbody className="text-[14px]">
+                  <tr className="bg-white border-b border-slate-100">
+                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Collection mechanism</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Dust retained on suitable filter media</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Compatible particles collected through water contact</td>
+                  </tr>
+                  <tr className="bg-slate-50/50 border-b border-slate-100">
+                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Material suitability</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Review combustible dust, temperature and filter compatibility</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Review water reactivity, gas generation and mixed-metal hazards</td>
+                  </tr>
+                  <tr className="bg-white border-b border-slate-100">
+                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Routine maintenance</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Filter cleaning, replacement and dust removal</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Water-level checks, sludge removal and internal cleaning</td>
+                  </tr>
+                  <tr className="bg-slate-50/50 border-b border-slate-100">
+                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Utilities and waste</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Electrical supply; compressed air if the cleaning system needs it</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Electrical supply, make-up water and a defined sludge route</td>
+                  </tr>
+                  <tr className="bg-white border-b border-slate-100">
+                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Hot-work duty</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Evaluate sparks and ignition controls as part of the design</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100">Do not assume water collection makes every hot-work process suitable</td>
+                  </tr>
+                  <tr className="bg-slate-50/50">
+                    <td className="p-5 lg:p-6 font-bold text-[#0f1b3a]">Final selection</td>
+                    <td className="p-5 lg:p-6 text-slate-500 font-medium border-l border-slate-100" colSpan={2}>Confirm the material, process risks and discharge requirements before choosing equipment.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* TECHNICAL SPECIFICATION SECTION */}
+        <section className="pt-12 pb-10 lg:pt-16 lg:pb-12 bg-white relative overflow-hidden">
+
+          {/* Background Watermark */}
+          <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center opacity-10">
+            <div className="relative w-[650px] h-[650px] translate-x-4 translate-y-4">
+              <Image
+                src="/Glossy Blue Clipboard Gear Icon.png"
+                alt="Background Decoration"
+                fill
+                className="object-contain object-center"
+              />
+            </div>
+          </div>
+
+          <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[1600px] mx-auto relative z-10">
+            <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+
+              {/* Left Side */}
+              <div className="w-full lg:w-[45%]">
+                <div className="mb-6">
+                  <span className="text-slate-500 font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase">
+                    TECHNICAL SPECIFICATION
+                  </span>
+                </div>
+                <h2 className="text-4xl md:text-5xl lg:text-[46px] font-black text-[#0f1b3a] leading-[1.1] tracking-tight mb-6">
+                  A bench that fits the job.<br />
+                  <span className="text-primary-blue">A specification that fits the site.</span>
+                </h2>
+                <p className="text-slate-500 text-[15px] leading-relaxed font-medium mb-10 max-w-md">
+                  Airflow, table size and motor power should follow the application. Share the required work envelope and material details so the proposal can define the operating basis rather than rely on a generic catalogue rating.
+                </p>
+                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold text-[13px] transition-all shadow-sm group">
+                  Request a technical proposal
+                  <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </button>
+              </div>
+
+              {/* Right Side (Specs List) */}
+              <div className="w-full lg:w-[55%]">
+                <div className="flex flex-col">
+
+                  {/* Row */}
+                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5 border-b border-slate-200/80 first:pt-0">
+                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Work surface & capacity</h4>
+                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Part dimensions, supported load, grating or perforated top, working height and tool access</p>
+                  </div>
+
+                  {/* Row */}
+                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5 border-b border-slate-200/80">
+                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Extraction performance</h4>
+                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Active capture area, airflow distribution, resistance, fan duty and discharge arrangement</p>
+                  </div>
+
+                  {/* Row */}
+                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5 border-b border-slate-200/80">
+                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Collection technology</h4>
+                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Filter media or wet collection selected for the dust characteristics and process risks</p>
+                  </div>
+
+                  {/* Row */}
+                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5 border-b border-slate-200/80">
+                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Electrical & utilities</h4>
+                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Local voltage, frequency, controls, compressed-air needs and water requirements as applicable</p>
+                  </div>
+
+                  {/* Row */}
+                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5 border-b border-slate-200/80">
+                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Serviceability</h4>
+                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Access clearance, collection removal, filter or water servicing and monitoring provisions</p>
+                  </div>
+
+                  {/* Row */}
+                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-5">
+                    <h4 className="w-full md:w-[35%] text-[15px] font-bold text-[#0f1b3a] shrink-0">Project documentation</h4>
+                    <p className="w-full md:w-[65%] text-[14px] text-slate-500 leading-relaxed font-medium">Agree drawings, design inputs, inspection scope and operating instructions in the quotation</p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
         {/* PRICE & PROCUREMENT SECTION */}
-        <section className="pt-10 pb-20 lg:py-28 bg-[#f8fafc] relative overflow-hidden">
+        <section className="pt-10 pb-20 lg:py-28 bg-white relative overflow-hidden">
           <svg width="0" height="0" className="absolute">
             <defs>
               <clipPath id="card-clip" clipPathUnits="objectBoundingBox">
@@ -1321,6 +1516,53 @@ export default function NapcenLandingPage() {
           </div>
         </section>
 
+        {/* PRICE & PROCUREMENT SECTION */}
+        <section className="py-1 lg:py-1 bg-white relative overflow-hidden">
+          <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[1600px] mx-auto relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+              {/* Left Side Content */}
+              <div className="w-full lg:w-[45%] flex flex-col justify-center">
+                <div className="mb-6">
+                  <span className="text-slate-500 font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase">
+                    DOWNDRAFT TABLE PRICE & PROCUREMENT
+                  </span>
+                </div>
+
+                <h2 className="text-4xl md:text-5xl lg:text-[46px] font-black text-[#0f1b3a] leading-[1.08] tracking-tight mb-6">
+                  Compare complete solutions.<br />
+                  <span className="text-primary-blue">Understand the installed cost.</span>
+                </h2>
+
+                <p className="text-slate-600 text-[15px] sm:text-[16px] leading-relaxed font-medium mb-8 max-w-lg">
+                  A downdraft table quotation should make the scope clear. Two benches with similar dimensions can differ significantly in capture arrangement, filtration, controls and site requirements.
+                </p>
+
+                <div className="flex items-center">
+                  <a href="#contact" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold text-[13px] uppercase tracking-wider transition-all shadow-sm group cursor-pointer">
+                    <span>Discuss pricing</span>
+                    <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Side Image */}
+              <div className="w-[calc(100%+3rem)] -mx-6 sm:mx-0 sm:w-full lg:w-[55%] relative flex justify-center lg:justify-end mt-4 lg:mt-0 -mb-12 lg:mb-0">
+                <div className="relative w-full max-w-[700px] h-[380px] sm:h-[450px] lg:h-[550px]">
+                  <Image
+                    src="/Smartphone-UI-Cost-Guide-Cards.png"
+                    alt="Price and Procurement Cost Guide"
+                    fill
+                    className="object-contain object-center lg:object-right scale-110 sm:scale-100"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* WORKING PRINCIPLE SECTION */}
         {/* INTERNATIONAL PROJECTS SECTION */}
         <section className="py-16 xl:py-20 bg-[#050b14] relative overflow-hidden">
           {/* Earth Image - Pinned to absolute right edge of the screen */}
@@ -1384,245 +1626,6 @@ export default function NapcenLandingPage() {
           </div>
         </section>
 
-        {/* APPLICATIONS SECTION */}
-        <section id="applications" className="py-24 bg-white relative overflow-hidden">
-          <div className="w-full px-4 md:px-8 xl:px-12 2xl:px-16 max-w-[1600px] mx-auto">
-            {/* Header Area */}
-            <div className="mb-8 relative">
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-4xl">
-                <div className="mb-4">
-                  <span className="text-slate-500 font-bold text-[11px] tracking-[0.2em] uppercase block">Equipment</span>
-                </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f1b3a] leading-[1.05] tracking-tight mb-6">
-                  Industrial Downdraft Table<br className="hidden md:block" />
-                  <span className="text-primary-blue">Manufacturer</span>
-                </h2>
-                <p className="text-slate-500 text-lg mb-2 max-w-lg leading-relaxed font-medium">
-                  NAPCEN downdraft tables capture dust and fumes from grinding, welding, polishing and woodworking. Explore portable and custom extraction benches with dry or wet collection options. Request a quote for your industrial application.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* Application Cards Grid */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-5">
-              {[
-                {
-                  category: "METALWORKING",
-                  title: "Grinding Downdraft Table",
-                  desc: "NAPCEN Grinding Downdraft Tables provide dust extraction at the work surface for metal grinding, deburring and abrasive finishing.",
-                  extraLabel: "Applications",
-                  extraText: "Metal grinding, edge finishing, deburring and surface preparation.",
-                  btnText: "Explore grinding tables",
-                  linkUrl: "#contact",
-                  icon: Settings2,
-                  image: "/Portable_Downdraft_Table.png"
-                },
-                {
-                  category: "FINISHING",
-                  title: "Polishing Downdraft Table",
-                  desc: "Capture airborne particles generated during buffing, polishing and surface finishing. An integrated extraction work surface draws fine metal dust and abrasive residue.",
-                  extraLabel: "Applications",
-                  extraText: "Metal polishing, buffing, abrasive finishing and component surface preparation.",
-                  btnText: "Explore polishing tables",
-                  linkUrl: "#contact",
-                  icon: Gem,
-                  image: "/Downdraft Dust Collector Table.png"
-                },
-                {
-                  category: "FABRICATION",
-                  title: "Welding Downdraft Table",
-                  desc: "Combine an industrial workbench with local extraction for welding smoke and fine particulate. Downward suction draws fumes toward the filtration system.",
-                  extraLabel: "Applications",
-                  extraText: "Bench welding, small-component fabrication and compatible welding preparation tasks.",
-                  btnText: "Explore welding tables",
-                  linkUrl: "#contact",
-                  icon: Wind,
-                  image: "/Grinding Downdraft Table.png"
-                },
-                {
-                  category: "GENERAL DUST",
-                  title: "Downdraft Dust Collector Table",
-                  desc: "Integrate a working surface and particulate collection system into one industrial workstation. Air passes through the perforated tabletop carrying compatible dust.",
-                  extraLabel: "Applications",
-                  extraText: "Grinding, sanding, deburring, polishing and general component finishing.",
-                  btnText: "Explore dust collectors",
-                  linkUrl: "#contact",
-                  icon: Cloud,
-                  image: "/Welding Downdraft Table.png"
-                },
-                {
-                  category: "FLEXIBLE",
-                  title: "Portable Downdraft Table",
-                  desc: "Bring dust and fume extraction to workshops with changing production layouts. A compact work surface and integrated filtration system support compatible tasks.",
-                  extraLabel: "Applications",
-                  extraText: "Maintenance work, small-batch finishing, workshop sanding and light fabrication.",
-                  btnText: "Explore portable tables",
-                  linkUrl: "#contact",
-                  icon: Truck,
-                  image: "/Wood Working Downdraft Table.png"
-                },
-                {
-                  category: "WOOD & JOINERY",
-                  title: "Woodworking Downdraft Table",
-                  desc: "Provide local dust extraction for manual sanding and compatible wood finishing operations. Downward airflow through the work surface draws fine wood dust.",
-                  extraLabel: "Applications",
-                  extraText: "Furniture sanding, joinery finishing, wooden component preparation and carving tasks.",
-                  btnText: "Explore woodworking tables",
-                  linkUrl: "#contact",
-                  icon: Layers,
-                  image: "/Polishing Downdraft Table.png"
-                }
-              ].map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div key={i} variants={fadeInUp} className="relative p-6 lg:p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all group overflow-hidden min-h-[420px] flex flex-col">
-                    {/* Top row: Icon */}
-                    <div className="flex justify-between items-start mb-6 relative z-10">
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-slate-50 text-slate-400 group-hover:bg-primary-blue group-hover:text-white transition-colors">
-                        <Icon size={24} />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative z-20 flex-1 flex flex-col">
-                      <div className="text-[10px] font-bold text-primary-blue tracking-widest uppercase mb-2">
-                        {item.category}
-                      </div>
-                      <h3 className="text-2xl font-black mb-3 text-slate-800">{item.title}</h3>
-                      <p className="text-slate-600 text-sm font-medium leading-relaxed mb-4 pr-12 sm:pr-16 lg:pr-24">{item.desc}</p>
-
-                      <div className="mb-8 pr-[140px] sm:pr-[150px] lg:pr-[170px]">
-                        <span className="font-bold text-xs text-slate-700 uppercase">{item.extraLabel}:</span>
-                        <span className="text-sm text-slate-500 ml-2">{item.extraText}</span>
-                      </div>
-
-                      <div className="mt-auto flex justify-start relative z-30">
-                        <a href={item.linkUrl} className="border border-slate-200 text-slate-700 hover:border-primary-blue hover:text-primary-blue bg-white/80 backdrop-blur-sm inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-all">
-                          {item.btnText} <ArrowUpRight size={14} />
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Background Equipment Image - Absolute at bottom right */}
-                    <div className="absolute -bottom-2 -right-0 lg:-right-2 w-[180px] h-[180px] lg:w-[200px] lg:h-[200px] z-10 group-hover:scale-110 transition-transform duration-500 origin-bottom-right">
-                      <Image src={item.image} alt={item.title} fill className="object-contain drop-shadow-2xl" />
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* WORKING PRINCIPLE SECTION */}
-        <section id="working-principle" className="py-10 lg:py-24 bg-white relative overflow-clip">
-          <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[1600px] mx-auto relative z-10">
-            {/* Header */}
-            <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-20">
-              <span className="text-slate-500 font-bold text-[11px] tracking-[0.2em] uppercase block mb-4">HOW IT WORKS</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f1b3a] leading-[1.05] tracking-tight mb-6">
-                Downdraft Table <span className="text-primary-blue">Working Principle</span>
-              </h2>
-              <p className="text-slate-500 text-lg leading-relaxed font-medium">
-                A downdraft table works by drawing dust-laden air downward through a perforated work surface into a collection system. An extraction fan creates suction across the active working area, helping capture particles generated during grinding, sanding, deburring, polishing and suitable bench welding operations.
-              </p>
-            </div>
-
-            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
-              {/* Left Side: Image */}
-              <div className="relative lg:sticky lg:top-32">
-                <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square flex items-center justify-center group">
-                  <Image src="/Downdraft table working principle.png" alt="Downdraft table working principle" fill className="object-contain scale-110 lg:scale-125 " />
-                </div>
-
-                {/* Conclusion Block under Image */}
-                <div className="mt-8 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group hover:border-blue-200 transition-colors">
-                  <div className="absolute top-0 left-0 w-1.5 h-full bg-primary-blue"></div>
-                  <h4 className="text-[17px] font-black text-[#0f1b3a] mb-3 group-hover:text-primary-blue transition-colors">What Determines Downdraft Table Performance?</h4>
-                  <p className="text-[13px] sm:text-sm text-slate-500 font-medium leading-relaxed">
-                    Effective industrial dust extraction depends on airflow distribution, workpiece position, filter condition and containment around the operation. Selecting a NAPCEN downdraft table starts with the material, production task and component dimensions so the extraction arrangement suits the actual working conditions.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Side: Numbered Steps */}
-              <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
-                {[
-                  { title: "Dust and Fume Capture", text: "The workpiece sits above the extraction surface, placing collection close to the emission source. Downward airflow carries airborne particles into the bench. Depending on the configuration, rear and side extraction panels can extend capture around the working zone." },
-                  { title: "Airflow Through the Collection Chamber", text: "Contaminated air enters an internal chamber beneath the tabletop. The chamber directs airflow toward the filtration or separation system. Workpiece size, blocked openings and workshop cross-drafts affect how effectively the downdraft extraction table captures emissions." },
-                  { title: "Particle Separation", text: "In a dry downdraft table, cartridge or bag filters retain compatible dust and fine particulate while air passes through the filter media. A wet downdraft table uses water contact to separate suitable particles. The collection method must match the material and process." },
-                  { title: "Dust Collection and Filter Cleaning", text: "Captured material accumulates in a collection drawer, hopper or wet-system sludge compartment. Dry systems equipped with pulse cleaning use compressed-air bursts to release dust from filter surfaces. Routine removal of collected material and filter servicing help maintain extraction performance." },
-                  { title: "Filtered-Air Discharge", text: "The fan maintains airflow through the bench and directs treated air toward the specified outlet. Indoor return or outdoor discharge depends on the contaminants, filtration arrangement and site requirements. Particulate filters do not automatically remove gases or vapours." }
-                ].map((step, idx) => (
-                  <motion.div key={idx} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="bg-white rounded-3xl p-5 sm:p-6 lg:p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:border-blue-100 transition-all group">
-                    <div className="grid grid-cols-[auto_1fr] gap-x-4 sm:gap-x-5 lg:gap-x-6 gap-y-3 sm:gap-y-1.5 items-center sm:items-start">
-                      <div className="w-12 h-12 rounded-[14px] bg-slate-50 text-slate-300 font-black text-xl flex items-center justify-center shrink-0 group-hover:bg-primary-blue group-hover:text-white transition-colors shadow-sm border border-slate-100 group-hover:border-primary-blue sm:row-span-2 self-start">
-                        {idx + 1}
-                      </div>
-                      <h3 className="text-lg sm:text-[19px] font-black text-[#0f1b3a] group-hover:text-primary-blue transition-colors pt-1 sm:pt-0">
-                        {step.title}
-                      </h3>
-                      <p className="text-slate-500 text-[13px] sm:text-[14px] leading-relaxed font-medium w-full col-span-2 sm:col-span-1 sm:col-start-2">
-                        {step.text}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* PRICE & PROCUREMENT SECTION */}
-        <section className="py-1 lg:py-1 bg-white relative overflow-hidden">
-          <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[1600px] mx-auto relative z-10">
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-
-              {/* Left Side Content */}
-              <div className="w-full lg:w-[45%] flex flex-col justify-center">
-                <div className="mb-6">
-                  <span className="text-slate-500 font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase">
-                    DOWNDRAFT TABLE PRICE & PROCUREMENT
-                  </span>
-                </div>
-
-                <h2 className="text-4xl md:text-5xl lg:text-[46px] font-black text-[#0f1b3a] leading-[1.08] tracking-tight mb-6">
-                  Compare complete solutions.<br />
-                  <span className="text-primary-blue">Understand the installed cost.</span>
-                </h2>
-
-                <p className="text-slate-600 text-[15px] sm:text-[16px] leading-relaxed font-medium mb-8 max-w-lg">
-                  A downdraft table quotation should make the scope clear. Two benches with similar dimensions can differ significantly in capture arrangement, filtration, controls and site requirements.
-                </p>
-
-                <div className="flex items-center">
-                  <a href="#contact" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold text-[13px] uppercase tracking-wider transition-all shadow-sm group cursor-pointer">
-                    <span>Discuss pricing</span>
-                    <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Right Side Image */}
-              <div className="w-[calc(100%+3rem)] -mx-6 sm:mx-0 sm:w-full lg:w-[55%] relative flex justify-center lg:justify-end mt-4 lg:mt-0 -mb-12 lg:mb-0">
-                <div className="relative w-full max-w-[700px] h-[380px] sm:h-[450px] lg:h-[550px]">
-                  <Image
-                    src="/Smartphone-UI-Cost-Guide-Cards.png"
-                    alt="Price and Procurement Cost Guide"
-                    fill
-                    className="object-contain object-center lg:object-right scale-110 sm:scale-100"
-                  />
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* WORKING PRINCIPLE SECTION */}
-        <WorkingPrincipleDark />
-
-        {/* WORKFLOW SECTION */}
         <WorkflowSection />
 
         {/* FAQ SECTION */}

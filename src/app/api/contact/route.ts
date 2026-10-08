@@ -28,7 +28,8 @@ Email: ${data.email}
 Phone: ${data.phone}
 Country / City: ${data.countryCity}
 What will you use the table for ?: ${data.application}
-Preferred Table: ${data.preferredTable || "Not specified"}
+Compare complete solutions.
+Understand the installed cost.Preferred Table: ${data.preferredTable || "Not specified"}
 Requirements: ${data.requirements}
       `,
     };

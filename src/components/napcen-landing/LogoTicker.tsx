@@ -14,7 +14,7 @@ const logos = Array.from({ length: 32 }, (_, i) => {
 
 export default function LogoTicker() {
   return (
-    <section className="bg-white py-6 md:py-8 overflow-hidden border-b border-zinc-100">
+    <section className="bg-white py-6 md:py-8 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center mb-8 md:mb-12">
         <p className="text-[11px] font-bold tracking-[0.25em] text-slate-400 uppercase mb-3">
           Trusted By Industry Leaders
