@@ -1278,7 +1278,7 @@ export default function NapcenLandingPage() {
         </section>
 
         {/* TECHNICAL SPECIFICATION SECTION */}
-        <section className="pt-12 pb-10 lg:pt-16 lg:pb-12 bg-white relative overflow-hidden">
+        <section id="engineering" className="pt-12 pb-10 lg:pt-16 lg:pb-12 bg-white relative overflow-hidden">
 
           {/* Background Watermark */}
           <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center opacity-10">
