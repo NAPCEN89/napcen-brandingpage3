@@ -147,8 +147,9 @@ export default function NapcenLandingPage() {
           </a>
 
           <nav className="hidden md:flex items-center gap-8 text-[15px] font-bold text-[#0f1b3a]">
-            <a href="#products" className="hover:text-primary-blue transition-colors">Systems</a>
-            <a href="#applications" className="hover:text-primary-blue transition-colors">Applications</a>
+            <a href="#configurations" className="hover:text-primary-blue transition-colors">Systems</a>
+            <a href="#equipment" className="hover:text-primary-blue transition-colors">Products</a>
+            <a href="#application-explorer" className="hover:text-primary-blue transition-colors">Applications</a>
             <a href="#engineering" className="hover:text-primary-blue transition-colors">Engineering</a>
             <a href="#faq" className="hover:text-primary-blue transition-colors">FAQs</a>
             <a href="#contact" className="bg-[#154db0] hover:bg-[#103a87] text-white px-6 py-2.5 rounded shadow-sm transition-colors">Request a quote</a>
@@ -464,7 +465,7 @@ export default function NapcenLandingPage() {
         </section>
 
         {/* SYSTEM CONFIGURATIONS SECTION */}
-        <section id="configurations" className="py-10 lg:py-32 bg-white relative overflow-hidden">
+        <section id="configurations" className="pt-10 lg:pt-32 pb-10 lg:pb-12 bg-white relative overflow-hidden">
           {/* Precise Technical Grid Pattern */}
           <div
             className="absolute inset-0 z-0 opacity-[0.025] pointer-events-none"
@@ -700,8 +701,8 @@ export default function NapcenLandingPage() {
           </div>
         </section>
 
-        {/* APPLICATIONS SECTION */}
-        <section id="applications" className="py-24 bg-white relative overflow-hidden">
+        {/* EQUIPMENT SECTION */}
+        <section id="equipment" className="py-24 bg-white relative overflow-hidden">
           <div className="w-full px-4 md:px-8 xl:px-12 2xl:px-16 max-w-[1600px] mx-auto">
             {/* Header Area */}
             <div className="mb-8 relative">
@@ -835,7 +836,7 @@ export default function NapcenLandingPage() {
         </section>
 
         {/* APPLICATION EXPLORER SECTION */}
-        <section className="pt-20 pb-10 lg:py-28 relative overflow-hidden bg-white">
+        <section id="application-explorer" className="pt-20 pb-10 lg:py-28 relative overflow-hidden bg-white">
           {/* Ambient Backgrounds */}
           <div className="absolute inset-0 pointer-events-none z-0">
             {/* Geometric faint lines */}
@@ -1152,7 +1153,7 @@ export default function NapcenLandingPage() {
           </div>
         </section> */}
         {/* WORKING PRINCIPLE SECTION */}
-        <section id="working-principle" className="py-10 lg:py-24 bg-white relative overflow-clip">
+        <section id="working-principle" className="pt-10 lg:pt-12 pb-10 lg:pb-24 bg-white relative overflow-clip">
           <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[1600px] mx-auto relative z-10">
             {/* Header */}
             <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-20">

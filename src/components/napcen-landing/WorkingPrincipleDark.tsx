@@ -12,7 +12,7 @@ const fadeInUp: Variants = {
 
 export default function WorkingPrincipleDark() {
   return (
-    <section className="py-16 lg:py-24 bg-white relative overflow-hidden border-t border-slate-100">
+    <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-[1400px] relative z-10">
         
         {/* SEO Hidden Text (Screen Readers only) */}

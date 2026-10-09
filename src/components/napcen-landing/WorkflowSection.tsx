@@ -54,54 +54,54 @@ export default function WorkflowSection() {
               title: "Engineer",
               desc: "Select the right downdraft table design, airflow, filtration type and control system.",
               color: "text-sky-500", bg: "bg-sky-500", borderColor: "border-sky-500",
-              image: "/INDUSTRIAL/Industrial%20Process%20Design%20Workstation.png"
+              image: "/Industrial Napcen Filtration Workstation.png"
             },
             {
               step: "03",
               title: "Detail Design",
               desc: "Prepare GA drawings, specifications and electrical details approval.",
               color: "text-teal-400", bg: "bg-teal-400", borderColor: "border-teal-400",
-              image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=300&q=80"
+              image: "/Industrial Filtration Unit Engineering Blueprint.png"
             },
             {
               step: "04",
               title: "Manufacture",
               desc: "Fabricate downdraft table and assemble all components as per approved design.",
               color: "text-green-500", bg: "bg-green-500", borderColor: "border-green-500",
-              image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=300&q=80"
+              image: "/Industrial Dust Extraction Machine in Workshop.png"
             },
             {
               step: "05",
               title: "Inspect & Test",
               desc: "Perform dimensional inspection, airflow testing, filter efficiency check and quality verification.",
               color: "text-yellow-500", bg: "bg-yellow-500", borderColor: "border-yellow-500",
-              image: "/INDUSTRIAL/Steelworks%20to%20Smart%20Automotive%20Assembly.png"
+              image: "/Technician Inspecting Napcen Industrial Machine.png"
             },
             {
               step: "06",
               title: "Dispatch & Install",
               desc: "Pack, dispatch and coordinate site installation, ducting and electrical connection (where included in scope).",
               color: "text-orange-500", bg: "bg-orange-500", borderColor: "border-orange-500",
-              image: "/INDUSTRIAL/Precision Inspection of a Stainless Vessel.png"
+              image: "/Napcen Machine Loading into Container.png"
             },
             {
               step: "07",
               title: "Commission & Support",
               desc: "Start-up and performance verification. Provide operator training, spares and after-sales support.",
               color: "text-red-500", bg: "bg-red-500", borderColor: "border-red-500",
-              image: "/INDUSTRIAL/Industrial%20Process%20Commissioning%20Team.png"
+              image: "/Industrial Napcen Dust Extraction Workstation.png"
             },
           ].map((item, i, arr) => (
             <React.Fragment key={i}>
               <div className="flex flex-col items-center text-center relative group w-[220px] lg:w-[11%] shrink-0 snap-center">
                 <div className="relative mb-5 inline-block">
-                  <div className={`w-28 h-28 lg:w-32 lg:h-32 rounded-full border-[3px] p-1 lg:p-1.5 transition-colors duration-300 bg-white ${item.borderColor}`}>
+                  <div className={`w-32 h-32 lg:w-36 lg:h-36 rounded-full border-[3px] p-1 lg:p-1.5 transition-colors duration-300 bg-white ${item.borderColor}`}>
                     <div className="w-full h-full rounded-full overflow-hidden relative bg-slate-100">
-                      <Image src={item.image} alt={item.title} fill sizes="(max-width: 1024px) 112px, 128px" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                      <Image src={item.image} alt={item.title} fill sizes="(max-width: 1024px) 128px, 144px" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                   </div>
 
-                  <div className={`absolute -top-1 -left-1 w-8 h-8 lg:w-9 lg:h-9 rounded-full flex items-center justify-center text-white font-bold text-[13px] lg:text-sm border-2 border-white shadow-sm z-10 ${item.bg}`}>
+                  <div className={`absolute -top-1 -left-1 w-8 h-8 lg:w-9 lg:h-9 rounded-full flex items-center justify-center text-white font-bold text-[13px] lg:text-[14px] border-2 border-white shadow-sm z-10 ${item.bg}`}>
                     {item.step}
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function WorkflowSection() {
               </div>
 
               {i < arr.length - 1 && (
-                <div className="hidden lg:flex flex-1 items-center justify-center relative min-w-[10px]" style={{ height: '128px' }}>
+                <div className="hidden lg:flex flex-1 items-center justify-center relative min-w-[10px]" style={{ height: '144px' }}>
                   <div className={`h-[2px] w-full ${arr[i + 1].bg}`}></div>
                   <div className={`absolute right-0 w-0 h-0 border-y-[5px] border-y-transparent border-l-[6px] border-l-current ${arr[i + 1].color}`} style={{ right: '-3px' }}></div>
                 </div>
