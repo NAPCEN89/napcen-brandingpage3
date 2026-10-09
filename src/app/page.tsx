@@ -731,7 +731,7 @@ export default function NapcenLandingPage() {
                   btnText: "Explore grinding tables",
                   linkUrl: "#contact",
                   icon: Settings2,
-                  image: "/Portable_Downdraft_Table.png"
+                  image: "/Grinding Downdraft Table.png"
                 },
                 {
                   category: "FINISHING",
@@ -742,7 +742,7 @@ export default function NapcenLandingPage() {
                   btnText: "Explore polishing tables",
                   linkUrl: "#contact",
                   icon: Gem,
-                  image: "/Downdraft Dust Collector Table.png"
+                  image: "/Polishing Downdraft Table.png"
                 },
                 {
                   category: "FABRICATION",
@@ -753,7 +753,7 @@ export default function NapcenLandingPage() {
                   btnText: "Explore welding tables",
                   linkUrl: "#contact",
                   icon: Wind,
-                  image: "/Grinding Downdraft Table.png"
+                  image: "/Welding Downdraft Table.png"
                 },
                 {
                   category: "GENERAL DUST",
@@ -764,7 +764,7 @@ export default function NapcenLandingPage() {
                   btnText: "Explore dust collectors",
                   linkUrl: "#contact",
                   icon: Cloud,
-                  image: "/Welding Downdraft Table.png"
+                  image: "/Downdraft Dust Collector Table.png"
                 },
                 {
                   category: "FLEXIBLE",
@@ -775,7 +775,7 @@ export default function NapcenLandingPage() {
                   btnText: "Explore portable tables",
                   linkUrl: "#contact",
                   icon: Truck,
-                  image: "/Wood Working Downdraft Table.png"
+                  image: "/Portable_Downdraft_Table.png"
                 },
                 {
                   category: "WOOD & JOINERY",
@@ -786,7 +786,7 @@ export default function NapcenLandingPage() {
                   btnText: "Explore woodworking tables",
                   linkUrl: "#contact",
                   icon: Layers,
-                  image: "/Polishing Downdraft Table.png"
+                  image: "/Wood Working Downdraft Table.png"
                 }
               ].map((item, i) => {
                 const Icon = item.icon;
