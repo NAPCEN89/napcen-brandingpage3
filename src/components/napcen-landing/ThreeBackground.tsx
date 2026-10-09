@@ -1,6 +1,6 @@
 "use client";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useMemo, useRef, Suspense } from "react";
+import { useMemo, useRef, Suspense, useState, useEffect } from "react";
 import * as THREE from "three";
 
 function Particles() {
@@ -45,6 +45,16 @@ function Particles() {
 }
 
 export default function ThreeBackground() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <div className="absolute inset-0 z-0 pointer-events-none">
       <Canvas camera={{ position: [0, 0, 3] }}>

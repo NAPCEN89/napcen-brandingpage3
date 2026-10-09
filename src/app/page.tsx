@@ -191,7 +191,7 @@ export default function NapcenLandingPage() {
                   <a href="#contact" className="bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold py-4 px-8 rounded-full transition-all shadow-sm text-sm flex items-center gap-2 group">
                     Discuss your application <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
-                  <a href="#contact" className="bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold py-4 px-8 rounded-full transition-all shadow-sm text-sm flex items-center gap-2">
+                  <a href="#configurations" className="bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold py-4 px-8 rounded-full transition-all shadow-sm text-sm flex items-center gap-2">
                     Explore the systems
                   </a>
                 </div>
@@ -263,7 +263,7 @@ export default function NapcenLandingPage() {
                       <div className="flex flex-col gap-2">
                         <label className="text-[13px] font-bold text-[#0f1b3a]">What will you use the table for ? *</label>
                         <select required value={formData.application} onChange={(e) => setFormData({ ...formData, application: e.target.value })} className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue text-slate-700 transition-all font-medium shadow-sm">
-                          <option value="">Select application</option>
+                          <option value="" disabled hidden>Select application</option>
                           <option>Grinding & deburring</option>
                           <option>Welding & fabrication</option>
                           <option>Polishing & finishing</option>
@@ -276,7 +276,7 @@ export default function NapcenLandingPage() {
                     <div className="flex flex-col gap-2">
                       <label className="text-[13px] font-bold text-[#0f1b3a]">Preferred downdraft table <span className="text-slate-400 font-normal">(optional)</span></label>
                       <select value={formData.preferredTable} onChange={(e) => setFormData({ ...formData, preferredTable: e.target.value })} className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue text-slate-700 transition-all font-medium shadow-sm">
-                        <option value="Not sure — help me choose">Not sure — help me choose</option>
+                        <option value="" disabled hidden>Select preferred downdraft table</option>
                         <option value="Grinding Downdraft Table">Grinding Downdraft Table</option>
                         <option value="Polishing Downdraft Table">Polishing Downdraft Table</option>
                         <option value="Welding Downdraft Table">Welding Downdraft Table</option>
@@ -284,8 +284,9 @@ export default function NapcenLandingPage() {
                         <option value="Portable Downdraft Table">Portable Downdraft Table</option>
                         <option value="Woodworking Downdraft Table">Woodworking Downdraft Table</option>
                         <option value="Wet Downdraft Table">Wet Downdraft Table</option>
-                        <option value="centralized downdraft table">centralized downdraft table</option>
+                        <option value="centralized downdraft table">Centralized Downdraft Table</option>
                         <option value="Custom Downdraft Table">Custom Downdraft Table</option>
+                        <option value="Not sure — help me choose">Not sure — help me choose</option>
                       </select>
                     </div>
 
@@ -812,8 +813,8 @@ export default function NapcenLandingPage() {
                       </div>
 
                       <div className="mt-auto flex justify-start relative z-30">
-                        <a 
-                          href={item.linkUrl} 
+                        <a
+                          href={item.linkUrl}
                           onClick={() => setFormData({ ...formData, preferredTable: item.title })}
                           className="border border-slate-200 text-slate-700 hover:border-primary-blue hover:text-primary-blue bg-white/80 backdrop-blur-sm inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-all"
                         >
@@ -1040,7 +1041,13 @@ export default function NapcenLandingPage() {
 
                     {/* CTA Row */}
                     <div className="flex flex-col sm:flex-row items-center gap-4">
-                      <button className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold text-[12px] uppercase tracking-wider px-7 py-3.5 rounded-xl transition-all shadow-sm group cursor-pointer">
+                      <button
+                        onClick={() => {
+                          setFormData(prev => ({ ...prev, application: applicationsData[activeAppTab].title }));
+                          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold text-[12px] uppercase tracking-wider px-7 py-3.5 rounded-xl transition-all shadow-sm group cursor-pointer"
+                      >
                         <span>REQUEST AN APPLICATION REVIEW</span>
                         <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
                       </button>
@@ -1616,10 +1623,10 @@ export default function NapcenLandingPage() {
                 <p className="text-slate-300 text-[13px] xl:text-[15px] leading-[1.8] font-medium mb-10 lg:mb-12 pr-4 lg:pr-0">
                   Indian project enquiries: Chennai, Bengaluru, Pune, Mumbai, Coimbatore, Hosur, Ahmedabad and Puducherry. International enquiries are welcome from the Middle East, Southeast Asia and other manufacturing regions; availability and delivery scope are confirmed per project.
                 </p>
-                <button className="w-fit inline-flex items-center gap-4 px-8 py-3.5 rounded-full border border-slate-600 hover:border-[#0052ff] hover:bg-[#0052ff]/10 text-white font-bold text-[13px] transition-all group">
+                <a href="#contact" className="w-fit inline-flex items-center gap-4 px-8 py-3.5 rounded-full border border-slate-600 hover:border-white hover:bg-white/5 text-white font-bold text-[13px] transition-all group">
                   Discuss an export enquiry
                   <ArrowUpRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </div>
 
             </div>
