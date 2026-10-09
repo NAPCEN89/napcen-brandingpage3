@@ -1316,10 +1316,10 @@ export default function NapcenLandingPage() {
                 <p className="text-slate-500 text-[15px] leading-relaxed font-medium mb-10 max-w-md">
                   Airflow, table size and motor power should follow the application. Share the required work envelope and material details so the proposal can define the operating basis rather than rely on a generic catalogue rating.
                 </p>
-                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold text-[13px] transition-all shadow-sm group">
+                <a href="#contact" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold text-[13px] transition-all shadow-sm group">
                   Request a technical proposal
                   <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </button>
+                </a>
               </div>
 
               {/* Right Side (Specs List) */}
